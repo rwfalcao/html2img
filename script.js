@@ -1,10 +1,10 @@
-  function screenshot() {
+function screenshot() {
     var node = document.getElementById('my-node');
     html2canvas(node).then(function(canvas) {
         console.log(canvas);
         saveAs(canvas.toDataURL(), 'file-name.png');
     });
-  }
+}
 
 function saveAs(uri, filename) {
 
@@ -22,3 +22,16 @@ function saveAs(uri, filename) {
         window.open(uri);
     }
 }
+
+inputTitulo = document.getElementById("campotitulo");
+inputData = document.getElementById("campodata");
+
+inputTitulo.addEventListener('input', function (evt) {
+    title = inputTitulo.value;
+    document.getElementById("titu").textContent = title;
+});
+
+inputData.addEventListener('input', function (evt) {
+    data = inputData.value;
+    document.getElementById("dataz").textContent = data;
+});
